@@ -2,7 +2,7 @@
 import os
 import jinja2
 import webapp2
-
+import random
 
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
@@ -32,7 +32,20 @@ class MainHandler(BaseHandler):
     def get(self):
         return self.render_template("index.html")
 
+def numbers_generator(quantity):
+    numbers_l = []
 
+    while True:
+        if len(numbers_l) == quantity:
+            break
+
+        lottery_numbers = random.randint(1, 42)
+
+        if lottery_numbers not in numbers_l:
+            numbers_l.append(lottery_numbers)
+            numbers_l.sort
+
+    return numbers_l
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
