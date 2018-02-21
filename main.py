@@ -32,6 +32,14 @@ class MainHandler(BaseHandler):
     def get(self):
         return self.render_template("index.html")
 
+class LotteryHandler(BaseHandler):
+    def get(self):
+        numbers = numbers_generator(7)
+
+        params = {'numbers': numbers}
+
+        return self.render_template('lottery.html', params=params)
+
 def numbers_generator(quantity):
     numbers_l = []
 
@@ -43,10 +51,11 @@ def numbers_generator(quantity):
 
         if lottery_numbers not in numbers_l:
             numbers_l.append(lottery_numbers)
-            numbers_l.sort
+            numbers_l.sort(lottery_numbers)
 
     return numbers_l
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
+    webapp2.Route('/lottery', LotteryHandler),
 ], debug=True)
