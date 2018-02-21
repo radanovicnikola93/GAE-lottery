@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lottery</title>
+
+</head>
+<body>
+    <h1>Lottery generator</h1>
+    <p>Here are the winning numbers:</p>
+    <ul>
+    {% for number in numbers $}
+        <li>{{number}}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
