@@ -51,7 +51,7 @@ def numbers_generator(quantity):
 
         if lottery_numbers not in numbers_l:
             numbers_l.append(lottery_numbers)
-            numbers_l.sort(lottery_numbers)
+            numbers_l.sort()
 
     return numbers_l
 

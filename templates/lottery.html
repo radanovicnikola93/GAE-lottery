@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Lottery</title>
-
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <h1>Lottery generator</h1>
-    <p>Here are the winning numbers:</p>
+    <p>Here are the generated numbers:</p>
     <ul>
-    {% for number in numbers $}
+    {% for number in numbers %}
         <li>{{number}}</li>
     {% endfor %}
     </ul>
